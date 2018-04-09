@@ -117,10 +117,10 @@
               "hey pacifico"]
 
              [text {:style {:font-size 25
-                            :font-family "serif"
+                            :font-family "Helvetica"
                             :padding-top 8
                             :padding-bottom 8}}
-              "hey serif"]
+              "hey helvetica"]
 
              [<fontawesome-icon> {:name "camera" :size 30}]
 
@@ -132,4 +132,4 @@
 
 (defn init []
   (dispatch-sync [:initialize-db])
-  (.registerComponent app-registry "main" #(r/reactify-component app-root)))
+  (.registerRootComponent Expo (r/reactify-component app-root)))
