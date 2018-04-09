@@ -1,8 +1,8 @@
 (ns app.handlers
   (:require
-    [re-frame.core :refer [reg-event-db ->interceptor]]
-    [clojure.spec.alpha :as s]
-    [app.db :as db :refer [app-db]]))
+   [re-frame.core :refer [reg-event-db ->interceptor]]
+   [clojure.spec.alpha :as s]
+   [app.db :as db :refer [app-db]]))
 
 ;; -- Interceptors ----------------------------------------------------------
 ;;
@@ -38,3 +38,8 @@
   [validate-spec]
   (fn [db [_ value]]
     (assoc db :greeting value)))
+
+(reg-event-db
+ :set-app-ready?
+ (fn [db [_ value]]
+   (assoc db :app-ready? value)))
